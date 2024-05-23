@@ -4,30 +4,37 @@
   <link href="output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
+  <link
+  rel="stylesheet"
+  media="(prefers-color-scheme:light)"
+  href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css"
+/>
+<link
+  rel="stylesheet"
+  media="(prefers-color-scheme:dark)"
+  href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/dark.css"
+  onload="document.documentElement.classList.add('sl-theme-dark');"
+/>
+
   <script src="https://kit.fontawesome.com/88a2056623.js" crossorigin="anonymous"></script>
   <script src="//unpkg.com/alpinejs" defer></script>
   <title>A Website by Bryce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A young man has discovered the ability to create a website and make meta takes created by meta to make this description...oh so meta.">
+  <meta name="description" content="A Site by Bryce">
   <meta property="og:url" content="https://brycek.me">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="A Website by Bryce">
-  <meta property="og:description" content="A young man has discovered the ability to create a website and make meta takes created by meta to make this description...oh so meta.">
+  <meta property="og:title" content="A Site by Bryce">
+  <meta property="og:description" content="A Site by Bryce">
   <meta property="og:image" content="https://res.cloudinary.com/dd8esjoco/image/upload/v1675643708/brycek2_j0kdmb.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="brycek.me">
   <meta property="twitter:url" content="https://brycek.me">
-  <meta name="twitter:title" content="A Website by Bryce">
-  <meta name="twitter:description" content="A young man has discovered the ability to create a website and make meta takes created by meta to make this description...oh so meta.">
+  <meta name="twitter:title" content="A Site by Bryce">
+  <meta name="twitter:description" content="A Site by Bryce">
   <meta name="twitter:image" content="https://res.cloudinary.com/dd8esjoco/image/upload/v1675643708/brycek2_j0kdmb.jpg">
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen m-0 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100" x-data="{ darkMode: false }" x-init="darkMode = localStorage.getItem('dark-mode') === 'true'">
-  <header class="w-full p-4 flex justify-between items-center">
-    <h1 class="text-3xl font-bold">Bryce's Website</h1>
-    <button @click="darkMode = !darkMode; localStorage.setItem('dark-mode', darkMode)" class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full">
-      <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
-    </button>
-  </header>
+<body class="flex flex-col items-center justify-center min-h-screen m-0 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  
 
   <div class="hero-image bg-cover w-full h-[50vh] md:h-[30vh] landscape:h-[75vh]" style="background-image: url('https://res.cloudinary.com/dd8esjoco/image/upload/v1675643708/brycek2_j0kdmb.jpg')"></div>
   <p class="animate__animated animate__lightSpeedInLeft mt-4 text-xl md:text-2xl lg:text-3xl">Hey, I'm Bryce. Welcome to my site, find me below!</p>
@@ -40,18 +47,9 @@
     </sl-button-group>
   </div>
 
-  <footer class="footer mt-8 w-[80%] text-center md:w-[90%] lg:w-[70%]">
+  <footer class="footer mt-8 w-[50%] text-center md:w-[60%] lg:w-[40%]">
     <p>From Bryce, with ❤️</p>
   </footer>
 
-  <script>
-    // Optional JavaScript for added functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const darkModeToggle = document.querySelector('[data-dark-mode-toggle]');
-      darkModeToggle.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-      });
-    });
-  </script>
 </body>
 </html>
