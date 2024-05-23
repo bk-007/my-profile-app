@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <link href="styles.css" rel="stylesheet">
   <link href="output.css" rel="stylesheet">
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
   <script src="https://kit.fontawesome.com/88a2056623.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <script src="//unpkg.com/alpinejs" defer></script>
   <title>A Website by Bryce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A young man has discovered the ability to create a website and make meta takes created by meta to make this description...oh so meta.">
@@ -26,9 +21,17 @@
   <meta name="twitter:description" content="A young man has discovered the ability to create a website and make meta takes created by meta to make this description...oh so meta.">
   <meta name="twitter:image" content="https://res.cloudinary.com/dd8esjoco/image/upload/v1675643708/brycek2_j0kdmb.jpg">
 </head>
-<body class="flex flex-col items-center justify-center h-screen m-0 text-[2vw]">
+<body class="flex flex-col items-center justify-center min-h-screen m-0 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100" x-data="{ darkMode: false }" x-init="darkMode = localStorage.getItem('dark-mode') === 'true'">
+  <header class="w-full p-4 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">Bryce's Website</h1>
+    <button @click="darkMode = !darkMode; localStorage.setItem('dark-mode', darkMode)" class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+      <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+    </button>
+  </header>
+
   <div class="hero-image bg-cover w-full h-[50vh] md:h-[30vh] landscape:h-[75vh]" style="background-image: url('https://res.cloudinary.com/dd8esjoco/image/upload/v1675643708/brycek2_j0kdmb.jpg')"></div>
-  <p class="animate__animated animate__lightSpeedInLeft mt-4">Hey I'm Bryce. Welcome to my site, find me below!</p>
+  <p class="animate__animated animate__lightSpeedInLeft mt-4 text-xl md:text-2xl lg:text-3xl">Hey, I'm Bryce. Welcome to my site, find me below!</p>
+
   <div class="hotLinks mt-4">
     <sl-button-group class="flex justify-center flex-wrap w-[80%] md:w-[90%] lg:w-[70%]" label="Alignment">
       <sl-icon-button name="linkedin" label="LinkedIn" href="https://www.linkedin.com/in/brycek/" target="_blank"></sl-icon-button>
@@ -36,8 +39,19 @@
       <sl-icon-button name="instagram" label="DM Sliding" href="https://www.instagram.com/guaconallthethings/" target="_blank"></sl-icon-button>
     </sl-button-group>
   </div>
+
   <footer class="footer mt-8 w-[80%] text-center md:w-[90%] lg:w-[70%]">
     <p>From Bryce, with ❤️</p>
   </footer>
+
+  <script>
+    // Optional JavaScript for added functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkModeToggle = document.querySelector('[data-dark-mode-toggle]');
+      darkModeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+    });
+  </script>
 </body>
 </html>
